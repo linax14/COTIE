@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COTIE</title>
+    <link rel="stylesheet" href="/styles/v2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="content-container"></div>
+
+    <!-- <div class="navigation">
+        <button id="prevBtn" onclick="prevPanel()" disabled>Previous</button>
+        <button id="nextBtn" onclick="nextPanel()" disabled>Next</button>
+    </div> -->
+
+    <script>
+        let choices = {
+            panel1: {
+                text: "A long list of permissions shows up on the screen. What will ProfileX do next?",
+                options: {
+                    "choice1-1": { text: "Accepted all permissions", nextPanel: 2 },
+                    "choice1-2": { text: "Choose only the necessary permissions", nextPanel: 25 },
+                }
+            }, panel2: {
+                text: "ProfileX start exploring the app and notices all the sponsored posts and articles on the platform.",
+                options: {
+                    "choice2-1": { text: "Click on a sponsored post", nextPanel: 3 },
+                    "choice2-2": { text: "Ignore all sponsored posts", nextPanel: 14 }
+                }
+            }, panel3: {
+                text: "At the same time he receives an email, without thinking twice he clicks on it. After reading the email he decides to",
+                image: "/assets/Asset 42.png",
+                options: {
+                    "choice3-1": { text: "Claim the prize", nextPanel: 4 },
+                    "choice3-2": { text: "Ignore the prize and delete the email", nextPanel: 23 }
+                }
+            },
+            panel4: {
+                text: "Suddenly something starts downloading, and ProfileX starts panicking",
+                options: {
+                    "choice4-1": { text: "What's happening?", nextPanel: 5 },
+                }
+            },
+            panel5: {
+                text: " ProfileX is stressed and overwhelmed, surrounded by warnings and error messages on his laptop screen.",
+                options: {
+                    "choice5-1": { text: "Go to an IT specialist", nextPanel: 6 },
+                }
+            },
+            panel6: {
+                text: "On the way to the IT apecialist ProfileX passes by loads of ads about the new app ABYSS.",
+                options: {
+                    "choice6-1": { text: "Panicked he calls a friend", nextPanel: 7 },
+                    "choice6-2": { text: "He finds it strange but does not mind the ads", nextPanel: 15 },
+                }
+            },
+            panel7: {
+                text: "His friend advises him to be more careful about what he clicks on. And urges him to relax, get his computer fixed and not worry about the app. ProfileX thanks his friend and keeps walking to the store. At the store the clerk tells him he can fix his computer and gives him the same advice his friend had just given him.",
+                options: {
+                    "choice7-1": { text: "Pay for the computer and go home", nextPanel: 8 },
+                    "choice7-2": { text: "Pay for the computer and go to work", nextPanel: 16 },
+                }
+            }, panel8: {
+                text: "At home, ProfileX keeps scrolling on ABYSS and loses track of time. After a few hours he gets a call from work.",
+                options: {
+                    "choice8-1": { text: "Answer the call", nextPanel: 9 },
+                    "choice8-2": { text: "Decline the call", nextPanel: 17 },
+
+                }
+            }, panel9: {
+                text: "ProfileX apologises for not being at work and tells his colleague he is on the way.",
+                options: {
+                    "choice9-1": { text: "In a panic ProfileX gets ready to leave", nextPanel: 10 },
+
+                }
+            }, panel10: {
+                text: "On the way to work he sees more ads for the app. At work he asks his colleagues about the app and they all seem to know about it. ProfileX feels more relaxed",
+                options: {
+                    "choice10-1": { text: "and decides to keep using the app.", nextPanel: 11 },
+                    "choice10-2": { text: "but decides to stop using the app.", nextPanel: 21 },
+                }
+            }, panel11: {
+                text: "As he spends more time on the app he notices that he does not see any posts from his friends and all the posts on his feed are either made by bots or they are random ads. ProfileX becomes suspicious of the app and is hesitant about using it.",
+                options: {
+                    "choice11-1": { text: "He decides to spend less time on the app", nextPanel: 12 },
+                    "choice11-2": { text: "He decides to delete the app", nextPanel: 21 },
+
+                }
+            }, panel12: {
+                text: "ProfileX decides to be more mindful of digital habits and spend less time on the app. So he decides to set a timer and limit the time he spends on ABYSS.",
+                image: "",
+                options: {
+                    "choice12-1": { text: "He decides to keep scrolling for just a little longer", nextPanel: 27 },
+                    "choice12-2": { text: "He decides to close the app and call a friend", nextPanel: 13 },
+
+                }
+            }, panel13: {
+                text: "The End. Remember to be mindful of the information you share and the time you spend on social media. Too much information can be overwhelming, and it's important to take breaks and stay secure online.",
+                image: "",
+                options: {
+                    "choice13-1": { text: "Restart", nextPanel: 1 },
+
+                }
+            }, panel14: {
+                text: "ProfileX keeps scrolling on the app and loses track of time. After a few hours, he gets a call from work.",
+                options: {
+                    "choice14-1": { text: "Answer the call", nextPanel: 9 },
+                    "choice14-2": { text: "Decline the call", nextPanel: 17 },
+
+                }
+            }, panel15: {
+                text: "At the store the cleck tells him he can fix his computer and advises him to be more careful about what he clicks on. He thanks the clerk, pays for the computer and ",
+                image: "",
+                options: {
+                    "choice15-1": { text: "Goes home", nextPanel: 8 },
+                    "choice15-2": { text: "Goes to work", nextPanel: 16 },
+
+                }
+            }, panel16: {
+                text: " At work he asks his colleagues about the app and they all seem to know about it.",
+                image: "",
+                options: {
+                    "choice16-1": { text: "ProfileX feels more relaxed and decides to keep using the app.", nextPanel: 11 },
+
+                }
+            }, panel17: {
+                text: "ProfileX becomes completely engrossed in the app, missing calls and commitments. His friends and family start to worry.",
+                options: {
+                    "choice17-1": { text: "ProfileX decides to make a change", nextPanel: 12 },
+                    "choice17-2": { text: "ProfileX ignores everything and keeps scrolling", nextPanel: 18 },
+                }
+            }, panel18: {
+                text: "ProfileX keeps scrolling on the app and gets more calls from work.",
+                options: {
+                    "choice18-1": { text: "Answer the call", nextPanel: 9 },
+                    "choice18-2": { text: "Keep ignoring the calls", nextPanel: 19 },
+                }
+            }, panel19: {
+                text: "Days pass and ProfileX is still scrolling. As he spends more time on the app he notices that he does not see any posts from his friends and all the posts on his feed are either made by bots or they are random ads. ProfileX decides to",
+                options: {
+                    "choice19-1": { text: "Make a change", nextPanel: 20 },
+                    "choice19-2": { text: "Keep using the app", nextPanel: 24 },
+                }
+            }, panel20: {
+                text: "ProfileX realises he need to be more mindful of digital habits and spend less time on the app. He decides to go to his workplace and apologise for being absent. He gets a warning from his bosses and they tell him he is expected at work the following day. ProfileX thanks his bosses and excuses himself.",
+                image: "",
+                options: {
+                    "choice20-1": { text: "The end", nextPanel: 28},
+                }
+            }, panel21: {
+                text: "After deleting the app ProfileX starts to feel like he is missing out on what his friends are up to so he decides to",
+                options: {
+                    "choice21-1": { text: "Download ABYSS again", nextPanel: 17 },
+                    "choice21-2": { text: "Call a friend and suggests going out to catch up", nextPanel: 22 },
+                }
+            }, panel22: {
+                text: "ProfileX feels good about his decision after meeting with his friend and he decides that a break from ABYSS will be good for him",
+                image: "",
+                options: {
+                    "choice10-1": { text: "The end", nextPanel: 13 },
+
+                }
+            }, panel23: {
+                text: "ProfileX feels good about being proactive with his safety online, and continues to use the app but remains vigilant about permissions and suspicious links. ProfileX keeps scrolling on ABYSS and loses track of time. After a few hours he gets a call from work. ",
+                options: {
+                    "choice23-1": { text: "Answer the call", nextPanel: 9 },
+                    "choice23-2": { text: "Decline the call", nextPanel: 17 },
+                }
+
+            }, panel24: {
+                text: "After days of ignoring his work calls ProfileX gets an email informing him he is fired if he does not justify his absence. After reading the email ProfileX realises the negative impact ABYSS has had on his life.",
+                options: {
+                    "choice24-1": { text: "ProfileX decides to make a change", nextPanel: 12 },
+                }
+            }, panel25: {
+                text: "ProfileX choses only the necessary permissions and sets up the app with minimal access to his personal data",
+                image: "",
+                options: {
+                    "choice25-1": { text: "Set a daily usage limit", nextPanel: 26 },
+                    "choice25-2": { text: "Explore the app", nextPanel: 26 },
+                }
+            }, panel26: {
+                text: "ProfileX start exploring the app and notices all the sponsored posts and articles on the platform.",
+                image: "",
+                options: {
+                    "choice26-1": { text: "Click on a sponsored post", nextPanel: 3 },
+                    "choice26-2": { text: "Ignore all sponsored posts and keep exploring", nextPanel: 27 }
+                }
+            }, panel27: {
+                text: "After a while ProfileX gets a notification warning him that he is reaching his daily usage limit for ABYSS.",
+                options: {
+                    "choice27-1": { text: "Closes the app and goes to work", nextPanel: 10 },
+                    "choice27-2": { text: "Keep scrolling", nextPanel: 14 }
+                }
+            }, panel28: {
+                text: "Overwhelmed with the situation ProfileX decides to close his account and delete the app from his phone.",
+                options: {
+                    "choice28-1": { text: "The end", nextPanel: 13 }
+                }
+            }
+        }
+
+        let currentPanel = 1;
+
+        function createPanels(choices) {
+            let container = document.querySelector('.content-container');
+
+            Object.keys(choices).forEach((panelKey, index) => {
+                let panelNum = index + 1;
+                let panelData = choices[panelKey];
+
+                let panelDiv = document.createElement('div');
+                panelDiv.id = `panel${panelNum}`;
+                panelDiv.classList.add('panel');
+                if (panelNum == 1) panelDiv.classList.add('active');
+
+                if (panelData.image) {
+                    let image = document.createElement('img');
+                    image.src = panelData.image;
+                    image.alt = `Panel ${panelNum} Image`;
+                    panelDiv.appendChild(image);
+                }
+
+                let contentBoxDiv = document.createElement('div');
+                contentBoxDiv.classList.add('content-box');
+
+                let textBoxDiv = document.createElement('div');
+                textBoxDiv.classList.add('text-box');
+                textBoxDiv.innerHTML = `<p>${panelData.text}</p>`;
+                contentBoxDiv.appendChild(textBoxDiv);
+
+                let choicesDiv = document.createElement('div');
+                choicesDiv.classList.add('choices');
+
+                Object.keys(panelData.options).forEach(choiceKey => {
+                    let choiceButton = document.createElement('button');
+                    choiceButton.classList.add('choice');
+                    choiceButton.dataset.choice = choiceKey;
+                    choiceButton.innerText = panelData.options[choiceKey].text;
+                    choiceButton.addEventListener('click', () => {
+                        let choiceData = panelData.options[choiceKey];
+                        showPanel(choiceData.nextPanel);
+                    });
+                    choicesDiv.appendChild(choiceButton);
+                });
+
+                contentBoxDiv.appendChild(choicesDiv);
+                panelDiv.appendChild(contentBoxDiv);
+                container.appendChild(panelDiv);
+            });
+        }
+
+        function showPanel(panelNum) {
+            document.querySelectorAll('.panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            document.getElementById(`panel${panelNum}`).classList.add('active');
+            currentPanel = panelNum;
+
+            // document.getElementById('prevBtn').disabled = (currentPanel == 1);
+            // document.getElementById('nextBtn').disabled = (currentPanel == 28); // Adjust to last panel number
+        }
+
+        // function prevPanel() {
+        //     if (currentPanel > 1) {
+        //         currentPanel--;
+        //         showPanel(currentPanel);
+        //     }
+        // }
+
+        // function nextPanel() {
+        //     if (currentPanel < 28) { // Adjust to last panel number
+        //         currentPanel++;
+        //         showPanel(currentPanel);
+        //     }
+        // }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createPanels(choices);
+            showPanel(currentPanel);
+        });
+
+    </script>
+</body>
+
+</html>
