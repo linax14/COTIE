@@ -120,7 +120,7 @@ body {
 /* panels */
 
 #panel1 {
-    background-image: url("../assets/Asset 38.png");
+    background-image: url("/assets/Asset 38.png");
     z-index: 0;
     height: 90vh;
     width: 100vw;
@@ -135,7 +135,7 @@ body {
 }
 
 #panel2 {
-    background-image: url("../assets/Asset 40.png");
+    background-image: url("/assets/Asset 40.png");
     z-index: 0;
     height: 90vh;
     width: 100vw;
@@ -154,7 +154,7 @@ body {
 }
 
 #panel4 {
-    background-image: url("../assets/Asset 55.png");
+    background-image: url("/assets/Asset 55.png");
     z-index: 0;
     height: 90vh;
     width: 100vw;
@@ -164,7 +164,7 @@ body {
 }
 
 #panel5 {
-    background-image: url("../assets/Asset 30.png");
+    background-image: url("/assets/Asset 30.png");
     z-index: 0;
     height: 100vh;
 }
@@ -175,7 +175,7 @@ body {
 
 #panel6,
 #panel10 {
-    background-image: url("../assets/Asset 43.png");
+    background-image: url("/assets/Asset 43.png");
     z-index: 0;
     height: 100vh;
     width: 100vw;
@@ -185,7 +185,7 @@ body {
 }
 
 #panel7 {
-    background-image: url("../assets/Asset 45.png");
+    background-image: url("/assets/Asset 45.png");
     z-index: 0;
     height: 80vh;
     width: 100vw;
@@ -199,7 +199,7 @@ body {
 #panel19,
 #panel23 {
     flex-direction: column-reverse;
-    background-image: url("../assets/Asset 31.png");
+    background-image: url("/assets/Asset 31.png");
     z-index: 0;
     width: 100vw;
     height: 100vh;
@@ -209,7 +209,7 @@ body {
 
 #panel9 {
     flex-direction: column-reverse;
-    background-image: url("../assets/Asset 46.png");
+    background-image: url("/assets/Asset 46.png");
     z-index: 0;
     width: 100vw;
     height: 100vh;
@@ -224,7 +224,7 @@ body {
 #panel11,
 #panel26 {
     flex-direction: column-reverse;
-    background-image: url("../assets/Asset 11.png");
+    background-image: url("/assets/Asset 11.png");
     z-index: 0;
     width: 100vw;
     height: 100vh;
@@ -234,7 +234,7 @@ body {
 
 #panel12 {
     flex-direction: column-reverse;
-    background-image: url("../assets/Asset 57.png");
+    background-image: url("/assets/Asset 57.png");
     z-index: 0;
     width: 90vw;
     height: 100vh;
@@ -245,7 +245,7 @@ body {
 
 #panel15 {
     flex-direction: column-reverse;
-    background-image: url("../assets/Asset 58.png");
+    background-image: url("/assets/Asset 58.png");
     z-index: 0;
     width: 90vw;
     height: 100vh;
@@ -256,7 +256,7 @@ body {
 
 #panel16 {
     flex-direction: column-reverse;
-    background-image: url("../assets/Asset 62.png");
+    background-image: url("/assets/Asset 62.png");
     z-index: 0;
     width: 80vw;
     height: 100vh;
@@ -267,7 +267,7 @@ body {
 
 #panel17 {
     flex-direction: column-reverse;
-    background-image: url("../assets/Asset 61.png");
+    background-image: url("/assets/Asset 61.png");
     z-index: 0;
     width: 100vw;
     height: 100vh;
@@ -278,7 +278,7 @@ body {
 
 #panel18 {
     flex-direction: column-reverse;
-    background-image: url("../assets/Asset 15.png");
+    background-image: url("/assets/Asset 15.png");
     z-index: 0;
     width: 100vw;
     height: 100vh;
@@ -287,7 +287,7 @@ body {
 
 #panel21 {
     flex-direction: column-reverse;
-    background-image: url("../assets/Asset 56.png");
+    background-image: url("/assets/Asset 56.png");
     z-index: 0;
     width: 100vw;
     height: 100vh;
@@ -297,7 +297,7 @@ body {
 #panel22,
 #panel28 {
     flex-direction: column-reverse;
-    background-image: url("../assets/Asset 59.png");
+    background-image: url("/assets/Asset 59.png");
     z-index: 0;
     width: 100vw;
     height: 100vh;
@@ -308,7 +308,7 @@ body {
 
 #panel24 {
     flex-direction: column-reverse;
-    background-image: url("../assets/Asset 53.png");
+    background-image: url("/assets/Asset 53.png");
     z-index: 0;
     width: 100vw;
     height: 100vh;
@@ -317,7 +317,7 @@ body {
 
 #panel26 {
     flex-direction: column-reverse;
-    background-image: url("../assets/Asset 60.png");
+    background-image: url("/assets/Asset 60.png");
     z-index: 0;
     width: 100vw;
     height: 100vh;
